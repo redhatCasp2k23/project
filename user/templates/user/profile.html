@@ -1,0 +1,56 @@
+{% extends 'user/shared/base.html' %}
+{% block main %}
+<br><br>
+<div class="container my-1" >
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">User Profile</h3>
+          {% if data %}
+          <div class="text-center">
+            <img src="/media/{{data.issuer_image}}" alt="Profile Picture" class="rounded-circle" width="200" height="200">
+            <h2 class="card-text mt-4">{{user}}</h2>
+            <hr>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="issuer_id" class="font-weight-bold">ID Proof:</label>
+                <img src="/media/{{data.issuer_id}}" alt="ID Proof" class="img-fluid img-thumbnail" width="200" height="160">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="issuer_name" class="font-weight-bold">User Address:</label> {{data.address}}
+                <p id="gender" class="mb-0">
+                  {% if data.gender == 0 %}
+                  <label for="issuer_id" class="font-weight-bold">Gender :</label> <span class="text-success ml-0">Male</span>
+                  {% elif data.gender == 1 %}
+                  <label for="issuer_id" class="font-weight-bold">Gender :</label> <span class="text-danger ml-2">Female</span>
+                  {% else %}
+                  <label for="issuer_id" class="font-weight-bold">Gender :</label> <span class="text-muted ml-2">N/A</span>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+              <a href="{% url 'update' id=data.id %}" class="btn btn-primary btn-block">Update Profile</a>
+            </div>
+            <div class="col-md-6">
+              <a href="{% url 'delete' id=data.id %}" class="btn btn-danger btn-block" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</a>
+            </div>
+          </div>
+          {% endif %}
+          <hr>
+          <div class="text-center">
+            <a class="btn btn-danger my-2 my-sm-0" href={% url 'account_logout' %}>Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main %}

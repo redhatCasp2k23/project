@@ -1,0 +1,89 @@
+{% extends 'user/shared/base.html' %}
+{% block main %}
+ <br><br>
+ <div style="background-image: url('/media/leaf.jpg'); background-size: cover; height: 1080px;">
+    <div class="container text-center">
+      <h1 class="display-4" style="color: white;">Welcome to CitySight</h1>
+      <p class="lead" style="color: white;">
+        A community-driven platform for addressing local issues
+      </p>
+      <a href="{% url 'user_index' %}" class="btn btn-primary">Explore</a>
+    </div>
+  <div class="container my-5" style="color: white; max-width: 100vw;">
+    <h2 class="text-center">How it Works</h2><br>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Report an Issue</h3>
+        <p>
+          Use the CitySight website or mobile app to report local issues such
+          as potholes, broken streetlights, and graffiti.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h3>Track Progress</h3>
+        <p>
+          Stay informed about what issues have been reported in your area and
+          track the status of those issues.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h3>Join the Conversation</h3>
+        <p>
+          Upvote or comment on reported issues to provide valuable insight and help
+          local government prioritize which issues to address first.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="container my-5">
+      <h2 class="text-center">Why Use CitySight</h2><br>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Easy and Accessible</h3>
+          <p>
+            The user-friendly and accessible platform makes it easy for anyone to
+            report local issues without the need to navigate confusing government
+            websites or make phone calls.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3>Transparency and Accountability</h3>
+          <p>
+            CitySight helps increase transparency and accountability between local
+            government and the community.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Empowerment</h3>
+          <p>
+            Residents are empowered to take an active role in improving their
+            community by using CitySight.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h3>Community Engagement</h3>
+          <p>
+            CitySight promotes community engagement by allowing residents to
+            upvote or comment on reported issues.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="text-center" style="font-size: 24px;">
+      &copy; 2023 MUHAMMED SHAHIL, THEJAS, SHIRANA
+    </p>
+  
+</div>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+{% endblock main %}
